@@ -1,0 +1,43 @@
+
+[INFO]
+MODULE: C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\utils\executor.py
+LINE: 362
+TIME: 01.11.2022 19:44:03
+MESSAGE: Bot: fhgfgh [@frgfgrfgfbot]
+
+[INFO]
+MODULE: C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py
+LINE: 358
+TIME: 01.11.2022 19:44:03
+MESSAGE: Start polling.
+
+[ERROR]
+MODULE: C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py
+LINE: 390
+TIME: 01.11.2022 19:48:27
+MESSAGE: Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiohttp\client.py", line 560, in _request
+    await resp.start(conn)
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiohttp\client_reqrep.py", line 899, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiohttp\streams.py", line 616, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Admin\Desktop\kaattyyyy_bot_rcp\venv\lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
