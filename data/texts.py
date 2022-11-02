@@ -21,6 +21,8 @@ MUSEUM_BUTTON_4 = 'Музей 4'
 MUSEUM_BUTTON_5 = 'Музей 5'
 
 #  TODO: Перенести в json файл и придумать, как сделать так чтобы он мог подгружаться во время использования приложения
+# Можно попробовать запускать с библиотекой schedule, если запускать процесс обновляющий файл раз в час
+# https://schedule.readthedocs.io/en/stable/background-execution.html
 MUSEUMS = {
     1: {
         'photo_path': 'images/image.jpg',
