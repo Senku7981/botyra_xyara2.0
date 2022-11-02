@@ -12,6 +12,7 @@ from loader import dp
 @dp.message_handler(commands='start')
 @dp.callback_query_handler(Text('start'))
 async def start(message: types.Message):
+    print('test')
     dp.bot.send_message(message.chat.id, 'test')
 # async def start(message: types.Message):
 #     """Стартовое сообщение"""
