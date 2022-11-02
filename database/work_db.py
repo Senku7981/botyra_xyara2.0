@@ -5,12 +5,12 @@ DB_PATH = 'database/database.sqlite'
 
 
 async def get_connect(db_name=DB_PATH):
-    '''Возвращает подключение к БД'''
+    """Возвращает подключение к БД"""
     return sqlite3.connect(db_name)
 
 
 async def execute_query(query, params=None, fetch=False, db_name=DB_PATH):
-    '''Отправляет запрос к БД'''
+    """Отправляет запрос к БД"""
     connect = await get_connect(db_name)
     cursor = connect.cursor()
 
@@ -29,7 +29,7 @@ async def execute_query(query, params=None, fetch=False, db_name=DB_PATH):
 
 
 async def create_tables():
-    '''Создание таблиц в БД'''
+    """Создание таблиц в БД"""
     users = '''
     CREATE TABLE IF NOT EXISTS users (
         user_id INTEGER PRIMARY KEY,

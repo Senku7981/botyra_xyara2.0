@@ -2,15 +2,15 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text
 
-import keyboards.keyboards as kb
 import database as db
+import keyboards.keyboards as kb
 from data import texts
 from loader import dp
 
 
 @dp.callback_query_handler(Text('quizzes'))
 async def select_level(call: types.CallbackQuery):
-    '''Выбор уровня сложности'''
+    """Выбор уровня сложности"""
     await call.answer()
     await call.message.delete()
     await call.message.answer(
@@ -24,7 +24,7 @@ async def select_level(call: types.CallbackQuery):
     lambda call: call.data == 'wrong' or call.data == 'right'
 )
 async def send_question(call: types.CallbackQuery, state: FSMContext):
-    '''Отправляет вопрос'''
+    """Отправляет вопрос"""
     await call.answer()
 
     if 'qz' in call.data:
@@ -74,7 +74,7 @@ async def send_question(call: types.CallbackQuery, state: FSMContext):
 
 
 async def send_result_quiz(call: types.CallbackQuery, state: FSMContext):
-    '''Отправляет результат викторины'''
+    """Отправляет результат викторины"""
     await call.answer()
     await call.message.delete()
     state_data = await state.get_data()

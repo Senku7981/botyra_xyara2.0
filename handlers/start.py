@@ -10,7 +10,7 @@ from loader import dp
 @dp.message_handler(commands='start')
 @dp.callback_query_handler(Text('start'))
 async def start(message: types.Message):
-    '''Стартовое сообщение'''
+    """Стартовое сообщение"""
     if 'data' in message:
         await message.message.delete()
 

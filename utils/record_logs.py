@@ -1,9 +1,8 @@
-import os
 import logging
+import os
 from logging.handlers import RotatingFileHandler
 
-
-PATH_DIR = 'loggs'
+PATH_DIR = 'logs'
 
 if not os.path.exists(PATH_DIR):
     os.mkdir(PATH_DIR)
@@ -13,8 +12,8 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 # Создание хэндлеров
-file_log = RotatingFileHandler(f'{PATH_DIR}/logs.txt', maxBytes=5242880,
-    backupCount=20, encoding='utf-8')
+file_log = RotatingFileHandler(f'{PATH_DIR}/logging.txt', maxBytes=5242880,
+                               backupCount=20, encoding='utf-8')
 console_log = logging.StreamHandler()
 
 # Создание формата сообщений

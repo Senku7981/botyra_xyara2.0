@@ -8,7 +8,7 @@ from loader import dp
 
 @dp.callback_query_handler(Text('basic_info'))
 async def select_museum(call: types.CallbackQuery):
-    '''Выбор музея'''
+    """Выбор музея"""
     await call.answer()
     await call.message.delete()
     await call.message.answer(
@@ -19,7 +19,7 @@ async def select_museum(call: types.CallbackQuery):
 
 @dp.callback_query_handler(Text(startswith='museum_'))
 async def send_info_museum(call: types.CallbackQuery):
-    '''Отправляет информацию о музее'''
+    """Отправляет информацию о музее"""
     await call.answer()
     await call.message.delete()
     museum = int(call.data.split('_')[-1])

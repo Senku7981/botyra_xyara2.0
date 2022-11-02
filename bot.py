@@ -1,12 +1,11 @@
 from aiogram import executor
 
-import utils, handlers
 from database import work_db
 from loader import dp
 
 
 async def on_startup(dp):
-    '''Действия при запуске бота'''
+    """Действия при запуске бота"""
     print('Бот запущен!')
 
     # Создание БД и таблиц в ней

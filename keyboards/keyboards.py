@@ -4,7 +4,7 @@ from data import texts
 
 
 async def get_inline_button(button_data):
-    '''Возвращает inlin-кнопку'''
+    """Возвращает inline-кнопку"""
     text, data = button_data
     params_button = {'text': text}
 
@@ -17,7 +17,7 @@ async def get_inline_button(button_data):
 
 
 async def get_keyboard(buttons_user, type_kb='inline', row_width=1):
-    '''Генерирует и возвращает клавиатуру'''
+    """Генерирует и возвращает клавиатуру"""
     if type_kb == 'inline':
         keyboard = types.InlineKeyboardMarkup(row_width=row_width)
         buttons = []
@@ -34,7 +34,7 @@ async def get_keyboard(buttons_user, type_kb='inline', row_width=1):
                 buttons.append(await get_inline_button(i))
     else:
         keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True,
-            row_width=row_width)
+                                             row_width=row_width)
         buttons = []
 
         for i in buttons_user:
@@ -55,7 +55,7 @@ async def get_keyboard(buttons_user, type_kb='inline', row_width=1):
 
 
 async def start_menu():
-    '''Кнопки на старте'''
+    """Кнопки на старте"""
     buttons = [
         [
             (texts.START_BUTTON_1, 'basic_info'),
@@ -67,7 +67,7 @@ async def start_menu():
 
 
 async def select_museum():
-    '''Выбор музея'''
+    """Выбор музея"""
     buttons = [
         [
             (texts.MUSEUM_BUTTON_1, 'museum_1'),
@@ -83,7 +83,7 @@ async def select_museum():
 
 
 async def museum_buttons():
-    '''Кнопки под информацией о музее'''
+    """Кнопки под информацией о музее"""
     buttons = [
         [
             (texts.OPERATOR_BUTTON, texts.OPERATOR_LINK),
@@ -95,7 +95,7 @@ async def museum_buttons():
 
 
 async def select_level():
-    '''Выбор уровня сложности'''
+    """Выбор уровня сложности"""
     buttons = [
         [
             (texts.LEVEL_1, 'qz_level_1'),
@@ -109,7 +109,7 @@ async def select_level():
 
 
 async def select_right_answer(level, current_question):
-    '''Выбор правильного ответа'''
+    """Выбор правильного ответа"""
     variants_answer = texts.QUIZZES[level][current_question]['variants_answer']
     right_answer = texts.QUIZZES[level][current_question]['right_answer_id']
     buttons = [[]]
